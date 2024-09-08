@@ -42,7 +42,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
             </Link>
-            <Link to={'/investimentos'}>
+            <Link to={'/beachBank/investimentos'}>
             <Card className= "transform transition-transform duration-300 ease-in-out hover:scale-110">
               <CardHeader>
                 <PiggyBank className="h-10 w-10 text-blue-600 mb-2" />

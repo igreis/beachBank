@@ -12,8 +12,8 @@ createRoot(document.getElementById('root')).render(
     <Header />
     <BrowserRouter basename="/beachBank">
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/investimentos' element={<PaginaInvestimentos />} />
+        <Route path='/beachBank' element={<HomePage />} />
+        <Route path='/beachBank/investimentos' element={<PaginaInvestimentos />} />
       </Routes>
     </BrowserRouter>
     <Footer/>
