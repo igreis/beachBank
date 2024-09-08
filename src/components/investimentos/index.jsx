@@ -91,7 +91,7 @@ export default function PaginaInvestimentos() {
                 />
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="periodoInvestimento">Prazo (meses)</Label>
+                <Label htmlFor="periodoInvestimento">Prazo em meses</Label>
                 <Input
                   id="periodoInvestimento"
                   type="number"
