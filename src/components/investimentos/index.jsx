@@ -154,7 +154,7 @@ export default function PaginaInvestimentos() {
               <ul className="text-sm space-y-2">
                 <li>0800 123 4567</li>
                 <li>contato@praiabank.com</li>
-                <li>Av. Beira Mar, 1000</li>
+                <li>Av. Beira Mar, 1100</li>
                 <li>Rio de Janeiro, RJ</li>
               </ul>
             </div>
