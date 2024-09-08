@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Button } from "../ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
 import { Input } from "../ui/input"
 import { Label } from "../ui/label"
-import { Waves, Calculator } from 'lucide-react'
+import { Calculator } from 'lucide-react'
 
 export default function PaginaInvestimentos() {
   const [investimentoInicial, setInvestimentoInicial] = useState(1000)
@@ -21,7 +21,7 @@ export default function PaginaInvestimentos() {
 
     const taxa_mensal = formula / 12
     const meses = periodoInvestimento;
-    
+
     for (let i = 0; i < meses; i++) {
       valor_total += investimentoMensal;
       valor_total *= (1 + taxa_mensal);
@@ -39,22 +39,6 @@ export default function PaginaInvestimentos() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
-      <header className="bg-white shadow-sm">
-        <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <Waves className="h-8 w-8 text-blue-600" />
-            <span className="text-2xl font-bold text-blue-600">Praia Bank</span>
-          </div>
-          <div className="hidden md:flex space-x-4">
-            <a href="/" className="text-gray-600 hover:text-blue-600">Início</a>
-            <a href="#" className="text-gray-600 hover:text-blue-600">Conta Digital</a>
-            <a href="#" className="text-gray-600 hover:text-blue-600">Cartões</a>
-            <a href="#" className="text-gray-600 hover:text-blue-600">Sobre Nós</a>
-          </div>
-          <Button>Abra sua conta</Button>
-        </nav>
-      </header>
-
       <main className="container mx-auto px-4 py-16">
         <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-8">
           Simulador de Investimentos
@@ -62,8 +46,7 @@ export default function PaginaInvestimentos() {
         <p className="text-xl text-center text-gray-600 mb-12">
           Calcule o potencial de crescimento do seu investimento com o Praia Bank
         </p>
-
-        <Card className="mb-8">
+        <Card className="mb-8 bg-white">
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">
               <Calculator className="h-6 w-6 text-blue-600" />

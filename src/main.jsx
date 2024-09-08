@@ -4,9 +4,11 @@ import HomePage from './components/home/index'
 import PaginaInvestimentos from './components/investimentos/index'
 import '../src/style/global.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Header } from './components/header'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <Header />
     <BrowserRouter basename="/beachBank">
       <Routes>
         <Route path='/' element={<HomePage />} />
