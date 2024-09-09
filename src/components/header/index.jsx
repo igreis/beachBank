@@ -8,7 +8,7 @@ export const Header = () => {
         <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Waves className="h-8 w-8 text-blue-600" />
-            <a href="/beachBank">
+            <a href="/beachBank/">
             <span className="text-2xl font-bold text-blue-600">Beach Bank</span>
             </a>
           </div>
