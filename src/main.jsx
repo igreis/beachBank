@@ -3,13 +3,16 @@ import { createRoot } from 'react-dom/client'
 import HomePage from './components/home/index'
 import '../src/style/global.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import CustomerServicePage from './components/atendimento/index'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter basename="/beachBank">
       <Routes>
         <Route path='/' element={<HomePage />} />
+        <Route path='/atendimento' element={<CustomerServicePage />} />
       </Routes>
+      
     </BrowserRouter>
   </StrictMode>,
 )

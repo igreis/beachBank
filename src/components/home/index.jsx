@@ -49,7 +49,7 @@ export default function HomePage() {
                 </CardContent>
               </Card>
             </Link>
-            <Link to = {'/'}>
+            <Link to = {'/atendimento'}>
             <Card className="transform transition-transform duration-300 ease-in-out hover:scale-110">
               <CardHeader>
                 <Smartphone className="h-10 w-10 text-blue-600 mb-2" />
