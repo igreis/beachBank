@@ -13,7 +13,7 @@ export default function HomePage() {
             Seu dinheiro, sua praia
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Experimente a liberdade financeira com o Praia Bank, seu banco 100% digital
+            Experimente a liberdade financeira com o Beach Bank, seu banco 100% digital
           </p>
         </section>
         <section className="container mx-auto px-4 py-16">
