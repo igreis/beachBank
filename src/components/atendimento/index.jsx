@@ -58,7 +58,7 @@ export default function CustomerServicePage() {
           }, 3000) // Simula o tempo de atendimento
         }, 1000) // Tempo para a animação de desenfileirar
       }
-    }, 5000)
+    }, 1000)
 
     return () => clearInterval(interval)
   }, [queue, currentCustomer])
@@ -142,7 +142,7 @@ export default function CustomerServicePage() {
             {queue.items.map((customer, index) => (
               <motion.div
                 key={`${customer}-${index}`}
-                className="absolute bottom-0 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold"
+                className="absolute bottom-0 w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold"
                 initial={{ x: '100%', y: 40 }}
                 animate={{ x: index * 60, y: 0 }}
                 exit={isDequeuing && index === 0 ? { x: '-100%', y: 40 } : { x: (index - 1) * 60, y: 0 }}
@@ -152,7 +152,7 @@ export default function CustomerServicePage() {
               </motion.div>
             ))}
           </AnimatePresence>
-          <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-blue-50 to-transparent z-10" />
+          <div className="absolute top-0 right-5 w-16 h-full bg-gradient-to-r from-blue-50 to-transparent z-10" />
           <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-blue-50 to-transparent z-10" />
         </div>
       </main>
