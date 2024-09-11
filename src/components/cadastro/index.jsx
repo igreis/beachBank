@@ -32,6 +32,7 @@ export default function OpenAccountPage() {
 
   const handleSubmit = e => {
     e.preventDefault();
+    //VALIDAÇOES
     navigate('/dados/' , {
       state: {
         nome: formData.fullName,
@@ -43,6 +44,7 @@ export default function OpenAccountPage() {
       }
     })
   }
+
 
 
   return (
