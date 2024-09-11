@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Header } from './components/header'
 import { Footer } from './components/footer'
 import CustomerServicePage from './components/atendimento/index'
+import OpenAccountPage from './components/cadastro'
+import UserDataPage from './components/dados'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -16,6 +18,8 @@ createRoot(document.getElementById('root')).render(
         <Route path='/' element={<HomePage />} />
         <Route path='/investimentos' element={<PaginaInvestimentos />} />
         <Route path='/atendimento' element={<CustomerServicePage />} />
+        <Route path='/cadastro' element={<OpenAccountPage />} />
+        <Route path='/dados' element={<UserDataPage />} />
       </Routes>
     </BrowserRouter>
     <Footer/>

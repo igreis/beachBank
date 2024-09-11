@@ -16,9 +16,11 @@ export const Header = () => {
             <a href="#" className="text-gray-600 hover:text-blue-600">Conta Digital</a>
             <a href="#" className="text-gray-600 hover:text-blue-600">Cartões</a>
             <a href="#" className="text-gray-600 hover:text-blue-600">Investimentos</a>
-            <a href="#" className="text-gray-600 hover:text-blue-600">Sobre Nós</a>
+            <a href="/beachBank/dados" className="text-gray-600 hover:text-blue-600">Minha Conta</a>
           </div>
+          <a href="/beachBank/cadastro">
           <Button>Abra sua conta</Button>
+          </a>
         </nav>
       </header>
     )

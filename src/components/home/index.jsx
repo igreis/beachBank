@@ -1,9 +1,9 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
 import { CreditCard, Smartphone, PiggyBank, Star } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 export default function HomePage() {
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
      
