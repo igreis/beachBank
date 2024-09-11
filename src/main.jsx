@@ -18,8 +18,8 @@ createRoot(document.getElementById('root')).render(
         <Route path='/' element={<HomePage />} />
         <Route path='/investimentos' element={<PaginaInvestimentos />} />
         <Route path='/atendimento' element={<CustomerServicePage />} />
-        <Route path='/cadastro' element={<OpenAccountPage />} />
-        <Route path='/dados' element={<UserDataPage />} />
+        <Route path='/cadastro/' element={<OpenAccountPage />} />
+        <Route path='beachBank/dados' element={<UserDataPage />} />
       </Routes>
     </BrowserRouter>
     <Footer/>
