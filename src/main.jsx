@@ -12,16 +12,16 @@ import UserDataPage from './components/dados'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Header />
     <BrowserRouter basename="/beachBank">
+    <Header />
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/investimentos' element={<PaginaInvestimentos />} />
         <Route path='/atendimento' element={<CustomerServicePage />} />
-        <Route path='/cadastro/' element={<OpenAccountPage />} />
-        <Route path='beachBank/dados' element={<UserDataPage />} />
+        <Route path='/cadastro' element={<OpenAccountPage />} />
+        <Route path='/dados' element={<UserDataPage />} />
       </Routes>
-    </BrowserRouter>
     <Footer/>
+    </BrowserRouter>
   </StrictMode>,
 )
