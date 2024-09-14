@@ -16,7 +16,7 @@ export const Header = () => {
           <div className="hidden md:flex space-x-4">
             <a href="#" className="text-gray-600 hover:text-blue-600">Conta Digital</a>
             <a href="#" className="text-gray-600 hover:text-blue-600">Cartões</a>
-            <a href="#" className="text-gray-600 hover:text-blue-600">Investimentos</a>
+            <Link to="investimentos" className="text-gray-600 hover:text-blue-600">Investimentos</Link>
             <Link to="/dados" className="text-gray-600 hover:text-blue-600">Minha Conta</Link>
           </div>
           <Link to="/cadastro">

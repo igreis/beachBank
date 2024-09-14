@@ -71,8 +71,8 @@ export default function HomePage() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="italic">"O Praia Bank mudou minha vida financeira. Agora tenho total controle sobre meu dinheiro!"</p>
-                  <p className="font-semibold mt-4">- Maria S.</p>
+                  <p className="italic">"HTML e CSS não serve pra nada!"</p>
+                  <p className="font-semibold mt-4">- Julião T.</p>
                 </CardContent>
               </Card>
               <Card>

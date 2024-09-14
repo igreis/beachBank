@@ -1,16 +1,48 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import { Button } from "../ui/dados/button"
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/dados/card"
-import { User, Edit } from 'lucide-react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Input } from "../ui/dados/input"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/dados/table"
+import { Waves, User, Edit, Save } from 'lucide-react'
+import { useLocation } from 'react-router-dom'
 
 export default function UserDataPage() {
-  
-  const location = useLocation();
-  const navigate = useNavigate();
 
-  const dados = location.state || {};
-  console.log(dados)
+  const location = useLocation();
+
+  const [userData, setUserData] = useState({
+    name: location.state.nome,
+    email: location.state.email,
+    phone: location.state.telefone,
+    birthDate: location.state.birthDate,
+    cpf: location.state.cpf,
+  })
+
+  const [editing, setEditing] = useState(false)
+  const [editedData, setEditedData] = useState({...userData})
+
+  const fields = [
+    { key: 'name', label: 'Nome' },
+    { key: 'email', label: 'Email' },
+    { key: 'phone', label: 'Telefone' },
+    { key: 'birthDate', label: 'Data de Nascimento' },
+    { key: 'cpf', label: 'CPF' },
+  ]
+
+  const handleEdit = () => {
+    setEditing(true)
+  }
+
+  const handleSave = () => {
+    setUserData(editedData)
+    setEditing(false)
+  }
+
+  const handleChange = (key, value) => {
+    setEditedData(prev => ({ ...prev, [key]: value }))
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
@@ -22,7 +54,7 @@ export default function UserDataPage() {
           Confira e gerencie suas informações pessoais
         </p>
 
-        <Card className="max-w-2xl mx-auto bg-white">
+        <Card className="max-w-4xl mx-auto bg-white">
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">
               <User className="h-6 w-6 text-blue-600" />
@@ -30,34 +62,47 @@ export default function UserDataPage() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <dl className="space-y-4">
-              <div className="grid grid-cols-3 gap-4">
-                <dt className="font-semibold text-gray-600 col-span-1">Nome:</dt>
-                <dd className="col-span-2">{dados.nome}</dd>
-              </div>
-              <div className="grid grid-cols-3 gap-4">
-                <dt className="font-semibold text-gray-600 col-span-1">Email:</dt>
-                <dd className="col-span-2">{dados.email}</dd>
-              </div>
-              <div className="grid grid-cols-3 gap-4">
-                <dt className="font-semibold text-gray-600 col-span-1">Telefone:</dt>
-                <dd className="col-span-2">{dados.telefone}</dd>
-              </div>
-              <div className="grid grid-cols-3 gap-4">
-                <dt className="font-semibold text-gray-600 col-span-1">Data de Nascimento:</dt>
-                <dd className="col-span-2">{dados.birthDate}</dd>
-              </div>
-              <div className="grid grid-cols-3 gap-4">
-                <dt className="font-semibold text-gray-600 col-span-1">CPF:</dt>
-                <dd className="col-span-2">{dados.cpf}</dd>
-              </div>
-            </dl>
-            <Button className="mt-8 w-full" variant="outline" onClick={() => navigate('/cadastro', {state: dados })}>
-              <Edit className="mr-2 h-4 w-4" /> Editar Informações
-            </Button>
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Campo</TableHead>
+                    <TableHead>Valor</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {fields.map((field) => (
+                    <TableRow key={field.key}>
+                      <TableCell className="font-medium">{field.label}</TableCell>
+                      <TableCell>
+                        {editing ? (
+                          <Input
+                            value={editedData[field.key]}
+                            onChange={(e) => handleChange(field.key, e.target.value)}
+                          />
+                        ) : (
+                          userData[field.key]
+                        )}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+            <div className="mt-6 flex justify-end">
+              {editing ? (
+                <Button onClick={handleSave}>
+                  <Save className="mr-2 h-4 w-4" /> Salvar Alterações
+                </Button>
+              ) : (
+                <Button onClick={handleEdit}>
+                  <Edit className="mr-2 h-4 w-4" /> Editar Informações
+                </Button>
+              )}
+            </div>
           </CardContent>
         </Card>
-      </main> 
+      </main>
     </div>
   )
 }
