@@ -5,7 +5,7 @@ import { Button } from "../ui/dados/button"
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/dados/card"
 import { Input } from "../ui/dados/input"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/dados/table"
-import { Waves, User, Edit, Save } from 'lucide-react'
+import { User, Edit, Save } from 'lucide-react'
 import { useLocation } from 'react-router-dom'
 
 export default function UserDataPage() {

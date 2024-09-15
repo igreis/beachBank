@@ -4,7 +4,7 @@ import Chart from "react-apexcharts";
 class Grafic extends Component {
   constructor(props) {
     super(props);
-    this.lista = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
+    this.lista = ['1°mês', '2°mês', '3°mês', '4°mês', '5°mês', '6°mês', '7°mês', '8°mês', '9°mês', '°10°mês', '11°mês', '12°mês']
     let { periodo } = this.props;
     let { dados } = this.props;
     this.lista2 = this.lista.slice(0, periodo)
@@ -59,7 +59,7 @@ class Grafic extends Component {
               options={this.state.options}
               series={this.state.series}
               type="bar"
-              width="1150"
+              max-width="1150"
               height="400"
             />
           </div>
