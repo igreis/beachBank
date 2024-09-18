@@ -1,12 +1,23 @@
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
 import { CreditCard, Smartphone, PiggyBank, Star } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import useStore from "../../store/store"
+import { useEffect } from "react"
 
 export default function HomePage() {
 
+  const { darkMode } = useStore();
+  
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [darkMode])
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
-     
+    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100">
       <main>
         <section className="container mx-auto px-4 py-16 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4">
@@ -21,7 +32,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
             <Link to={'/'} >
-              <Card className="transform transition-transform duration-300 ease-in-out hover:scale-110">
+              <Card className="bg-white transform transition-transform duration-300 ease-in-out hover:scale-110">
                 <CardHeader>
                   <CreditCard className="h-10 w-10 text-blue-600 mb-2" />
                   <CardTitle>Gere seu cartão virtual</CardTitle>
@@ -32,7 +43,7 @@ export default function HomePage() {
               </Card>
             </Link>
             <Link to = {'/atendimento'}>
-            <Card className="transform transition-transform duration-300 ease-in-out hover:scale-110">
+            <Card className="bg-white transform transition-transform duration-300 ease-in-out hover:scale-110">
               <CardHeader>
                 <Smartphone className="h-10 w-10 text-blue-600 mb-2" />
                 <CardTitle>Atendimento</CardTitle>
@@ -43,7 +54,7 @@ export default function HomePage() {
             </Card>
             </Link>
             <Link to={'/investimentos'}>
-            <Card className= "transform transition-transform duration-300 ease-in-out hover:scale-110">
+            <Card className= "bg-white transform transition-transform duration-300 ease-in-out hover:scale-110">
               <CardHeader>
                 <PiggyBank className="h-10 w-10 text-blue-600 mb-2" />
                 <CardTitle>Investimentos</CardTitle>
