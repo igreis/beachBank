@@ -9,6 +9,7 @@ import { Footer } from './components/footer'
 import CustomerServicePage from './components/atendimento/index'
 import OpenAccountPage from './components/cadastro'
 import UserDataPage from './components/dados'
+import { ToastContainer } from 'react-toastify'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')).render(
         <Route path='/dados' element={<UserDataPage />} />
       </Routes>
     <Footer/>
+    <ToastContainer autoClose={3000} className="toast-container" />
     </BrowserRouter>
   </StrictMode>,
 )

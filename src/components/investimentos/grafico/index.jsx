@@ -4,18 +4,29 @@ import Chart from "react-apexcharts";
 class Grafic extends Component {
   constructor(props) {
     super(props);
-    this.lista = ['1°mês', '2°mês', '3°mês', '4°mês', '5°mês', '6°mês', '7°mês', '8°mês', '9°mês', '°10°mês', '11°mês', '12°mês']
-    let { periodo } = this.props;
-    let { dados } = this.props;
+    this.lista = ['1°mês', '2°mês', '3°mês', '4°mês', '5°mês', '6°mês', '7°mês', '8°mês', '9°mês', '10°mês', '11°mês', '12°mês']
+    let { periodo, dados } = this.props;
     this.lista2 = this.lista.slice(0, periodo)
 
     this.state = {
       options: {
         chart: {
-          id: "basic-bar"
+          id: "basic-bar",
         },
         xaxis: {
-          categories: this.lista2
+          categories: this.lista2,
+          labels : {
+            style : {
+              colors: '#6694b9'
+            }
+          }
+        },
+        yaxis : {
+          labels: {
+            style : {
+              colors: '#6694b9'
+            }
+          }
         }
       },
       series: [
@@ -25,7 +36,10 @@ class Grafic extends Component {
         }
       ]
     };
+    
   }
+
+
 
   componentDidUpdate(prevProps) { //atualiza sempre q as props atualizam
     //Verifica se a props mudou
@@ -33,6 +47,7 @@ class Grafic extends Component {
       //atualiza a lista com o novo periodo
       const listaAtualizada = this.lista.slice(0, this.props.periodo)
       const dadosAtualizado = this.props.dados.slice(0, this.props.periodo)
+
       this.setState((prevState) => ({
         options: {
           ...prevState.options,
