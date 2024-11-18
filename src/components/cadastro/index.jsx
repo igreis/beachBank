@@ -38,15 +38,14 @@ export default function OpenAccountPage() {
     e.preventDefault();
     //VALIDAÇOES
     if (!(formData.fullName &&
-      formData.email &&
-      formData.phone &&
+      (formData.email || formData.phone) &&
       formData.cpf &&
       formData.birthDate &&
       formData.income &&
       formData.password &&
       formData.confirmPassword)
     ) {
-      toast.error('Preencha todos os dados')
+      toast.error('Preencha todos os dados obrigatórios')
       return;
     }
     if (formData.password != formData.confirmPassword) {
@@ -54,10 +53,10 @@ export default function OpenAccountPage() {
       toast.error('Senha ou confirmar senha inválido');
       return;
     }
-    if(!isEmail(formData.email)) {
-      toast.error('E-mail inválido')
-      return;
-    }
+    //if(!isEmail(formData.email)) {
+    //  toast.error('E-mail inválido')
+    //  return;
+    //}
     
       navigate('/dados/', {
         state: {
@@ -112,7 +111,7 @@ export default function OpenAccountPage() {
                   <Input
                     id="email"
                     name="email"
-                    type="text"
+                    type="email"
                     value={formData.email}
                     onChange={handleInputChange}
                     className="bg-gray-100 dark:bg-gray-700 dark:text-gray-300"
@@ -121,6 +120,7 @@ export default function OpenAccountPage() {
                 <div className="space-y-2">
                   <Label htmlFor="phone" className="text-gray-800 dark:text-gray-300">Telefone</Label>
                   <Input
+                    type="number"
                     id="phone"
                     name="phone"
                     value={formData.phone}

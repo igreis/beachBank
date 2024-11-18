@@ -41,10 +41,10 @@ class Grafic extends Component {
 
 
 
-  componentDidUpdate(prevProps) { //atualiza sempre q as props atualizam
-    //Verifica se a props mudou
+  componentDidUpdate(prevProps) { 
+    
     if (prevProps.periodo != this.props.periodo || prevProps.dados != this.props.dados) {
-      //atualiza a lista com o novo periodo
+      
       const listaAtualizada = this.lista.slice(0, this.props.periodo)
       const dadosAtualizado = this.props.dados.slice(0, this.props.periodo)
 

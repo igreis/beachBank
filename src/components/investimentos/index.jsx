@@ -25,38 +25,37 @@ export default function PaginaInvestimentos() {
   const [cdiInvestimento, setCdiInvestimento] = useState(100)
   const [resultado, setResultado] = useState(null)
   const [dadosGrafico, setDadosGrafico] = useState([])
+  
 
   const calcularInvestimento = () => {
     let valor_total = investimentoInicial;
-
+  
     const taxa_cdi = 10.40;
     const percentual_cdi = cdiInvestimento / 100;
     const formula = (taxa_cdi * percentual_cdi) / 100;
-
-    const taxa_mensal = formula / 12
+  
+    const taxa_mensal = formula / 12;
     const meses = periodoInvestimento;
-
-    let valor_total_mensal = investimentoInicial;
+  
     const dados = [];
-
+  
     for (let i = 0; i < meses; i++) {
       valor_total += investimentoMensal;
       valor_total *= (1 + taxa_mensal);
-
-      const juros_mensal = valor_total - valor_total_mensal - investimentoMensal;
-      dados.push(juros_mensal.toFixed(2));
+      dados.push(parseFloat(valor_total.toFixed(2))); // Usando parseFloat e fixando duas casas decimais
     }
-
+  
     const valor_investido = investimentoInicial + (investimentoMensal * meses);
     const rendimento = valor_total - valor_investido;
-
     setResultado({
       valorBruto: parseFloat(valor_total).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
       totalInvestido: parseFloat(valor_investido).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
       rendimento: parseFloat(rendimento).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-    })
-    setDadosGrafico(dados)
+    });
+    setDadosGrafico(dados); // Armazenando o montante total mensal
   }
+  
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-200">
@@ -133,6 +132,7 @@ export default function PaginaInvestimentos() {
                 <h3 className="text-lg font-semibold text-blue-800 dark:text-blue-300 mb-2">
                   Resultado da Simulação
                 </h3>
+                
                 <p>Montante Total: {resultado.valorBruto}</p>
                 <p>Total Investido: {resultado.totalInvestido}</p>
                 <p>Juros Ganhos: {resultado.rendimento}</p>
