@@ -10,6 +10,7 @@ import CustomerServicePage from './components/atendimento/index'
 import OpenAccountPage from './components/cadastro'
 import UserDataPage from './components/dados'
 import { ToastContainer } from 'react-toastify'
+import PaginaDespesas from './components/despesas'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')).render(
         <Route path='/atendimento' element={<CustomerServicePage />} />
         <Route path='/cadastro' element={<OpenAccountPage />} />
         <Route path='/dados' element={<UserDataPage />} />
+        <Route path='/despesas' element={<PaginaDespesas />} />
       </Routes>
     <Footer/>
     <ToastContainer autoClose={3000} className="toast-container" />
