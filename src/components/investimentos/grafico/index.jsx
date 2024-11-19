@@ -76,6 +76,7 @@ class Grafic extends Component {
               type="bar"
               max-width="1150"
               height="400"
+              margin="10"
             />
           </div>
         </div>

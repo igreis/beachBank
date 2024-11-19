@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
 import { Wallet } from 'lucide-react'
 import { Input } from "../ui/input"
 import { Label } from "../ui/label"
+import useStore from '../../store/store'
 
 export default function PaginaDespesas() {
     const mesesIniciais = {
@@ -21,6 +22,15 @@ export default function PaginaDespesas() {
         Dezembro: [],
     };
 
+    const { darkMode } = useStore();
+
+    useEffect(() => {
+        if (darkMode) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    }, [darkMode])
 
     const [despesas, setDespesas] = useState(mesesIniciais);
     const [valor, setValor] = useState("");
@@ -105,7 +115,7 @@ export default function PaginaDespesas() {
                                     Adicionar Despesa
                                 </Button>
                             </form>
-                            
+
                             <Button
                                 onClick={limparTabela}
                                 className="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-600"

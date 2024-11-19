@@ -5,6 +5,8 @@ import { Input } from "../ui/input"
 import { Label } from "../ui/label"
 import { Calculator } from 'lucide-react'
 import Grafic from './grafico/index'
+import GraficoLinha from './graficolinha'
+import GraficoPizza from './graficopizza'
 import useStore from '../../store/store'
 
 export default function PaginaInvestimentos() {
@@ -25,26 +27,42 @@ export default function PaginaInvestimentos() {
   const [cdiInvestimento, setCdiInvestimento] = useState(100)
   const [resultado, setResultado] = useState(null)
   const [dadosGrafico, setDadosGrafico] = useState([])
-  
+  const [alocacoes, setAlocacoes] = useState([]);
+
+
+  const valorTotalIvestido = investimentoInicial + investimentoMensal * periodoInvestimento;
+  const categorias = ['Renda Fixa', 'Ações', 'Fundos Imobiliários', 'Tesouro Direto'];
+
+  const calcularAlocacoes = () => {
+    const valores = [
+      valorTotalIvestido * 0.6, // 60% em Renda Fixa
+      valorTotalIvestido * 0.25, // 25% em Ações
+      valorTotalIvestido * 0.1, // 10% em Fundos Imobiliários
+      valorTotalIvestido * 0.05, // 5% em Tesouro Direto
+    ];
+
+    return valores;
+  };
+
 
   const calcularInvestimento = () => {
     let valor_total = investimentoInicial;
-  
+
     const taxa_cdi = 10.40;
     const percentual_cdi = cdiInvestimento / 100;
     const formula = (taxa_cdi * percentual_cdi) / 100;
-  
+
     const taxa_mensal = formula / 12;
     const meses = periodoInvestimento;
-  
+
     const dados = [];
-  
+
     for (let i = 0; i < meses; i++) {
       valor_total += investimentoMensal;
       valor_total *= (1 + taxa_mensal);
       dados.push(parseFloat(valor_total.toFixed(2))); // Usando parseFloat e fixando duas casas decimais
     }
-  
+
     const valor_investido = investimentoInicial + (investimentoMensal * meses);
     const rendimento = valor_total - valor_investido;
     setResultado({
@@ -53,9 +71,10 @@ export default function PaginaInvestimentos() {
       rendimento: parseFloat(rendimento).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
     });
     setDadosGrafico(dados); // Armazenando o montante total mensal
+    setAlocacoes(calcularAlocacoes());
   }
-  
-  
+
+
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-200">
@@ -71,7 +90,7 @@ export default function PaginaInvestimentos() {
             <CardTitle className="flex items-center space-x-2 text-blue-600 dark:text-blue-400">
               <Calculator className="h-6 w-6 text-blue-600 dark:text-blue-400" />
               <span>Calculadora de Investimento</span>
-            </CardTitle> 
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid gap-6">
@@ -127,16 +146,25 @@ export default function PaginaInvestimentos() {
                 Calcular Investimento
               </Button>
             </div>
-            {resultado && (
+            {resultado ? (
               <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900 rounded-md text-center text-gray-800 dark:text-gray-200">
                 <h3 className="text-lg font-semibold text-blue-800 dark:text-blue-300 mb-2">
                   Resultado da Simulação
                 </h3>
-                
+
                 <p>Montante Total: {resultado.valorBruto}</p>
                 <p>Total Investido: {resultado.totalInvestido}</p>
                 <p>Juros Ganhos: {resultado.rendimento}</p>
-                <Grafic periodo={periodoInvestimento} dados={dadosGrafico} darkMode={darkMode}/>
+
+                <Grafic periodo={periodoInvestimento} dados={dadosGrafico} darkMode={darkMode} />
+                <GraficoLinha periodo={periodoInvestimento} dados={dadosGrafico} darkMode={darkMode} />
+                <GraficoPizza categorias={categorias} valores={alocacoes} darkMode={darkMode} />
+              </div>
+            ) : (
+              <div className="mt-6 p-4 bg-gray-100 dark:bg-gray-800 rounded-md text-center text-gray-600 dark:text-gray-400">
+                <p className="text-lg">
+                  Calcule o investimento para visualizar os gráficos.
+                </p>
               </div>
             )}
           </CardContent>
@@ -144,6 +172,6 @@ export default function PaginaInvestimentos() {
       </main>
     </div>
   )
-  
-  
+
+
 }
