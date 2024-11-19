@@ -71,7 +71,7 @@ export default function PaginaInvestimentos() {
             <CardTitle className="flex items-center space-x-2 text-blue-600 dark:text-blue-400">
               <Calculator className="h-6 w-6 text-blue-600 dark:text-blue-400" />
               <span>Calculadora de Investimento</span>
-            </CardTitle>
+            </CardTitle> 
           </CardHeader>
           <CardContent>
             <div className="grid gap-6">
