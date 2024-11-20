@@ -4,6 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
 import { Wallet } from 'lucide-react'
 import { Input } from "../ui/input"
 import { Label } from "../ui/label"
+import useStore from '../../store/store'
+
 
 export default function PaginaDespesas() {
     const mesesIniciais = {
@@ -21,7 +23,7 @@ export default function PaginaDespesas() {
         Dezembro: [],
     };
 
-
+    const { darkMode } = useStore();
     const [despesas, setDespesas] = useState(mesesIniciais);
     const [valor, setValor] = useState("");
     const [mes, setMes] = useState("");
@@ -33,7 +35,6 @@ export default function PaginaDespesas() {
             alert("Por favor, preencha todos os campos!");
             return;
         }
-
 
         setDespesas((prevDespesas) => ({
             ...prevDespesas,
@@ -48,6 +49,11 @@ export default function PaginaDespesas() {
     const limparTabela = () => {
         setDespesas(mesesIniciais);
     };
+
+    useEffect(() => {
+        if (darkMode) document.documentElement.classList.add('dark')
+        else document.documentElement.classList.remove('dark')
+      })
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-200">

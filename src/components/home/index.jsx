@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import useStore from "../../store/store"
 import { useEffect } from "react"
 import { Button } from "../ui/button"
+import { Gamepad } from 'lucide-react'
 
 export default function HomePage() {
 
@@ -16,6 +17,10 @@ export default function HomePage() {
       document.documentElement.classList.remove('dark')
     }
   }, [darkMode])
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Sempre rola para o topo quando o caminho muda
+  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-200">
@@ -36,7 +41,7 @@ export default function HomePage() {
 
         <section className="container mx-auto px-4 py-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Link to={'/'}>
+            <Link to={'/'}>
               <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 transform transition-transform duration-300 ease-in-out hover:scale-110">
                 <CardHeader>
                   <CreditCard className="h-10 w-10 text-blue-600 dark:text-blue-400 mb-2" />
@@ -99,6 +104,23 @@ export default function HomePage() {
                   </p>
                   <Button variant="outline" className="w-full mt-5 dark:border-gray-600 dark:bg-black dark:border-none">
                     Despesas <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/kids">
+              <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 transform transition-transform duration-300 ease-in-out hover:scale-110">
+                <CardHeader>
+                  <Gamepad className="h-10 w-10 text-blue-600 dark:text-blue-400 mb-2" />
+                  <CardTitle className="text-blue-600 dark:text-blue-400">Área Kids</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    Se divirta com nossos jogos no espaço kids!
+                  </p>
+                  <Button variant="outline" className="w-full mt-5 dark:border-gray-600 dark:bg-black dark:border-none">
+                    Jogar Agora <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </CardContent>
               </Card>

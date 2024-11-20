@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import HomePage from './components/home/index'
 import PaginaInvestimentos from './components/investimentos/index'
 import '../src/style/global.css'
-  import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Header } from './components/header'
 import { Footer } from './components/footer'
 import CustomerServicePage from './components/atendimento/index'
@@ -11,11 +11,14 @@ import OpenAccountPage from './components/cadastro'
 import UserDataPage from './components/dados'
 import { ToastContainer } from 'react-toastify'
 import PaginaDespesas from './components/despesas'
+import KidsPage from './components/kids/home'
+import EducationalGamesPage from './components/kids/areaDesenho/index'
+import JogoDaMemoria from './components/kids/memoria/index'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter basename="/beachBank">
-    <Header />
+      <Header />
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/investimentos' element={<PaginaInvestimentos />} />
@@ -23,9 +26,12 @@ createRoot(document.getElementById('root')).render(
         <Route path='/cadastro' element={<OpenAccountPage />} />
         <Route path='/dados' element={<UserDataPage />} />
         <Route path='/despesas' element={<PaginaDespesas />} />
+        <Route path='/kids' element={<KidsPage />} />
+        <Route path='kids/area' element={<EducationalGamesPage />} />
+        <Route path='kids/memoria' element={<JogoDaMemoria />} />
       </Routes>
-    <Footer/>
-    <ToastContainer autoClose={3000} className="toast-container" />
+      <Footer />
+      <ToastContainer autoClose={3000} className="toast-container" />
     </BrowserRouter>
   </StrictMode>,
 )
