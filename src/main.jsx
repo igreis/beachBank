@@ -11,6 +11,7 @@ import OpenAccountPage from './components/cadastro'
 import UserDataPage from './components/dados'
 import { ToastContainer } from 'react-toastify'
 import PaginaDespesas from './components/despesas'
+import AlgoritmoDijkstra from './components/dijkstra'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -23,6 +24,7 @@ createRoot(document.getElementById('root')).render(
         <Route path='/cadastro' element={<OpenAccountPage />} />
         <Route path='/dados' element={<UserDataPage />} />
         <Route path='/despesas' element={<PaginaDespesas />} />
+        <Route path='/dijkstra' element={<AlgoritmoDijkstra/>}  />
       </Routes>
     <Footer/>
     <ToastContainer autoClose={3000} className="toast-container" />

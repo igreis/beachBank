@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
-import { CreditCard, Smartphone, PiggyBank, Star, ArrowRight, DollarSign } from 'lucide-react'
+import { CreditCard, Smartphone, PiggyBank, Star, ArrowRight, DollarSign, Landmark } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import useStore from "../../store/store"
 import { useEffect } from "react"
@@ -95,10 +95,27 @@ export default function HomePage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Organize quais foram suas despesas durante o ano!.
+                    Organize quais foram suas despesas durante o ano!
                   </p>
                   <Button variant="outline" className="w-full mt-5 dark:border-gray-600 dark:bg-black dark:border-none">
                     Despesas <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to={'/dijkstra'}>
+              <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 transform transition-transform duration-300 ease-in-out hover:scale-110">
+                <CardHeader>
+                  <Landmark className="h-10 w-10 text-blue-600 dark:text-blue-400 mb-2" />
+                  <CardTitle className="text-blue-600 dark:text-blue-400">Caixas Eletrônicos</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    Encontre o caixa eletrônico mais próximo de você!
+                  </p>
+                  <Button variant="outline" className="w-full mt-5 dark:border-gray-600 dark:bg-black dark:border-none">
+                    Procurar! <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </CardContent>
               </Card>

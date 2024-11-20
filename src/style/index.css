@@ -1,0 +1,10 @@
+.grafo-container {
+    display: flex;
+    margin-top: 10px;
+    border: 1px solid #e2e8f0;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    justify-content: 'center';
+    align-items: 'center';
+}
