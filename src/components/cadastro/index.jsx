@@ -37,7 +37,7 @@ export default function OpenAccountPage() {
   const handleSubmit = e => {
     e.preventDefault();
     //VALIDAÇOES
-    if (!(formData.fullName &&
+    /*if (!(formData.fullName &&
       (formData.email || formData.phone) &&
       formData.cpf &&
       formData.birthDate &&
@@ -52,7 +52,7 @@ export default function OpenAccountPage() {
       console.log(formData.password, formData.confirmPassword)
       toast.error('Senha ou confirmar senha inválido');
       return;
-    }
+    }*/
     //if(!isEmail(formData.email)) {
     //  toast.error('E-mail inválido')
     //  return;

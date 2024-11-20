@@ -5,7 +5,6 @@ import { Wallet } from 'lucide-react'
 import { Input } from "../ui/input"
 import { Label } from "../ui/label"
 import useStore from '../../store/store'
-
 export default function PaginaDespesas() {
     const mesesIniciais = {
         Janeiro: [],
@@ -44,7 +43,6 @@ export default function PaginaDespesas() {
             return;
         }
 
-
         setDespesas((prevDespesas) => ({
             ...prevDespesas,
             [mes]: [...prevDespesas[mes], parseFloat(valor)],
@@ -58,6 +56,11 @@ export default function PaginaDespesas() {
     const limparTabela = () => {
         setDespesas(mesesIniciais);
     };
+
+    useEffect(() => {
+        if (darkMode) document.documentElement.classList.add('dark')
+        else document.documentElement.classList.remove('dark')
+      })
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-200">
