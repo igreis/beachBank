@@ -138,7 +138,7 @@ export default function EducationalGamesPage() {
     const shapes = [
         { src: 'https://it-tehnik.ru/wp-content/uploads/html5-error.jpg', alt: 'Círculo' },
         { src: 'https://th.bing.com/th/id/OIP.93nmuSRCmgrQTWyQ8fHNjAHaKy?rs=1&pid=ImgDetMain', alt: 'Quadrado' },
-        { src: 'https://th.bing.com/th/id/R.f56e8a57952546d0e262c8e68f8ae047?rik=ZYMDHj56AuSlaA&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fpt%2fb%2fb3%2fSteveMinecraft.png&ehk=BcCOaRMJy4pyBOpXYKakkLA74u1dYlE3z%2fOLeigfLLo%3d&risl=&pid=ImgRaw&r=0', alt: 'Triângulo' },
+        { src: 'https://s.namemc.com/3d/skin/body.png?id=e05011e55833b73e&model=classic&width=320&height=320&bg1=ffffff&bg2=f4f4f4&shadow_color=000&shadow_radius=9&shadow_x=-12&shadow_y=5', alt: 'Triângulo' },
         { src: 'https://media-gru1-1.cdn.whatsapp.net/v/t61.24694-24/421065775_1085545815886693_8925505037988710976_n.jpg?stp=dst-jpg_tt6&ccb=11-4&oh=01_Q5AaIBoq_ky-PDG2xKcy2VOizMAdWeDc7XcqCOu3TbCQFWyU&oe=674A335A&_nc_sid=5e03e0&_nc_cat=111', alt: 'Estrela' },
         { src: 'https://th.bing.com/th/id/OIP.XRJmL4nPgtv5P9b20argTwAAAA?w=300&h=451&rs=1&pid=ImgDetMain', alt: 'Coração' },
         { src: 'https://media-gru1-1.cdn.whatsapp.net/v/t61.24694-24/458467513_2237315666653105_6680601762236950411_n.jpg?ccb=11-4&oh=01_Q5AaIN6gtjJKwFbBfLotoWR_SxZbVSQsfPIWNLtf0CSevjdS&oe=674B34DC&_nc_sid=5e03e0&_nc_cat=110', alt: 'Diamante' },

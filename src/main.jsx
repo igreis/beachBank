@@ -15,6 +15,7 @@ import AlgoritmoDijkstra from './components/dijkstra'
 import KidsPage from './components/kids/home'
 import EducationalGamesPage from './components/kids/areaDesenho/index'
 import JogoDaMemoria from './components/kids/memoria/index'
+import MoneyTreePage from './components/arvore/index'
 
 
 createRoot(document.getElementById('root')).render(
@@ -32,6 +33,7 @@ createRoot(document.getElementById('root')).render(
         <Route path='/kids' element={<KidsPage />} />
         <Route path='kids/area' element={<EducationalGamesPage />} />
         <Route path='kids/memoria' element={<JogoDaMemoria />} />
+        <Route path='/arvore' element={<MoneyTreePage />} />
       </Routes>
       <Footer />
       <ToastContainer autoClose={3000} className="toast-container" />

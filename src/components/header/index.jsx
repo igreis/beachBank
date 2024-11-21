@@ -20,7 +20,7 @@ export const Header = () => {
         <div className="hidden md:flex space-x-4">
           <a href="/beachBank/" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Início</a>
           <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Conta Digital</a>
-          <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Cartões</a>
+          <a href="/beachBank/arvore" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Árvore do Dinheiro</a>
           <a href="/beachBank/investimentos" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Investimentos</a>
           <a href="/beachBank/despesas" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Despesas</a>
         </div>
