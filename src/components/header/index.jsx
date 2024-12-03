@@ -23,6 +23,7 @@ export const Header = () => {
           <a href="/beachBank/arvore" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Árvore do Dinheiro</a>
           <a href="/beachBank/investimentos" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Investimentos</a>
           <a href="/beachBank/despesas" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Despesas</a>
+          <a href="/beachBank/funcao" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Funções</a>
         </div>
         <Button variant="outline" onClick={toggleDarkMode} className="text-gray-600 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
           {darkMode ? <Sun className="mr-2 h-4 w-4" /> : <Moon className="mr-2 h-4 w-4" />}

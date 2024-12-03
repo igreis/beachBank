@@ -157,8 +157,8 @@ export default function PaginaInvestimentos() {
                 <p>Juros Ganhos: {resultado.rendimento}</p>
 
                 <Grafic periodo={periodoInvestimento} dados={dadosGrafico} darkMode={darkMode} />
-                <GraficoLinha periodo={periodoInvestimento} dados={dadosGrafico} darkMode={darkMode} />
                 <GraficoPizza categorias={categorias} valores={alocacoes} darkMode={darkMode} />
+                <GraficoLinha periodo={periodoInvestimento} dados={dadosGrafico} darkMode={darkMode} />
               </div>
             ) : (
               <div className="mt-6 p-4 bg-gray-100 dark:bg-gray-800 rounded-md text-center text-gray-600 dark:text-gray-400">

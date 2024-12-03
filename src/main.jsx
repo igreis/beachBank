@@ -16,6 +16,7 @@ import KidsPage from './components/kids/home'
 import EducationalGamesPage from './components/kids/areaDesenho/index'
 import JogoDaMemoria from './components/kids/memoria/index'
 import MoneyTreePage from './components/arvore/index'
+import FunctionTesterPage from './components/funcao/funcao'
 
 
 createRoot(document.getElementById('root')).render(
@@ -34,6 +35,7 @@ createRoot(document.getElementById('root')).render(
         <Route path='kids/area' element={<EducationalGamesPage />} />
         <Route path='kids/memoria' element={<JogoDaMemoria />} />
         <Route path='/arvore' element={<MoneyTreePage />} />
+        <Route path='/funcao' element={<FunctionTesterPage />} />
       </Routes>
       <Footer />
       <ToastContainer autoClose={3000} className="toast-container" />
